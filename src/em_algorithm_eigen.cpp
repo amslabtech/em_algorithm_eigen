@@ -33,7 +33,7 @@ double EMAlgorithm::get_normal_distribution_value(Eigen::VectorXd x_, Eigen::Vec
     return 1.0 / (std::pow(2.0 * M_PI, d / 2.0) * sqrt(sigma_.determinant())) * std::exp(-0.5 * (x_ - mu_).transpose() * sigma_.inverse() * (x_ - mu_));
 }
 
-std::tuple<std::vector<Eigen::VectorXd>, std::vector<Eigen::MatrixXd>, std::vector<double> > EMAlgorithm::caluculate(unsigned int max_loop=100)
+std::tuple<std::vector<Eigen::VectorXd>, std::vector<Eigen::MatrixXd>, std::vector<double> > EMAlgorithm::calculate(unsigned int max_loop=100)
 {
     const unsigned int N = n - 1;
 
@@ -123,7 +123,7 @@ double EMAlgorithm::get_log_likelihood(const std::vector<Eigen::VectorXd>& data_
     double sum = 0;
     unsigned int n_ = data_.size();
     for(unsigned int i=0;i<n_;i++){
-        sum = std::log(get_gmm_value(data_[i], mu_, sigma_, pi_));
+        sum += std::log(get_gmm_value(data_[i], mu_, sigma_, pi_));
     }
     return sum;
 }

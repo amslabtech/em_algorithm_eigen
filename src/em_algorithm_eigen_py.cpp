@@ -18,7 +18,7 @@ PYBIND11_MODULE(em_algorithm_eigen_py, m)
         .def(py::init<>())
         .def("set_data", &EMAlgorithm::set_data)
         .def("set_num_of_distributions", &EMAlgorithm::set_num_of_distributions)
-        .def("caluculate", &EMAlgorithm::caluculate)
+        .def("caluculate", &EMAlgorithm::calculate)
         .def("get_normal_distribution_value", &EMAlgorithm::get_normal_distribution_value)
         .def("get_gmm_value", &EMAlgorithm::get_gmm_value)
         .def("get_log_likelihood", &EMAlgorithm::get_log_likelihood);

@@ -19,7 +19,7 @@ public:
     void set_data(const std::vector<Eigen::VectorXd>&);
     void set_num_of_distributions(unsigned int);
     double get_normal_distribution_value(Eigen::VectorXd, Eigen::VectorXd, Eigen::MatrixXd);
-    std::tuple<std::vector<Eigen::VectorXd>, std::vector<Eigen::MatrixXd>, std::vector<double> > caluculate(unsigned int max_loop);
+    std::tuple<std::vector<Eigen::VectorXd>, std::vector<Eigen::MatrixXd>, std::vector<double> > calculate(unsigned int max_loop);
     double get_gmm_value(const Eigen::VectorXd&, const std::vector<Eigen::VectorXd>&, const std::vector<Eigen::MatrixXd>&, const std::vector<double>&);
     double get_log_likelihood(const std::vector<Eigen::VectorXd>&, const std::vector<Eigen::VectorXd>&, const std::vector<Eigen::MatrixXd>&, const std::vector<double>&);
 
