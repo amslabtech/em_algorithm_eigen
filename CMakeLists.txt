@@ -9,7 +9,7 @@ find_package(Eigen3 REQUIRED)
 
 include_directories(
     include
-    ${Eigen3_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIRS}
 )
 
 add_library(em_algorithm_eigen src/em_algorithm_eigen.cpp)
