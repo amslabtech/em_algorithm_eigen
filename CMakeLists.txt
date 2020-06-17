@@ -6,13 +6,16 @@ set(PYBIND11_CPP_STANDARD -std=c++11)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -O2")
 
 find_package(Eigen3 REQUIRED)
+find_package(Boost REQUIRED)
 
 include_directories(
     include
     ${EIGEN3_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIRS}
 )
 
 add_library(em_algorithm_eigen src/em_algorithm_eigen.cpp)
+add_library(variational_inference src/variational_inference.cpp)
 
 if(EXISTS ${PROJECT_SOURCE_DIR}/pybind11)
     message("pybind11 exists")
